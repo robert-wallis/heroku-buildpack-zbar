@@ -2,7 +2,7 @@
 # bin/detect <build-dir>
 
 if [ -f $1/package.json ]; then
-  echo "zbar buildpack" && exit 0
+  echo "ZBAR" && exit 0
 else
   echo "no" && exit 1
 fi
