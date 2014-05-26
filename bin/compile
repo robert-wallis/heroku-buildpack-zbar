@@ -20,5 +20,4 @@ curl $zbar_url -s -o - | tar jxf - -C $build_dir
 
 mkdir -p $build_dir/vendor
 mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
-chmod +x $build_dir/vendor/zbar/bin/*
-PATH=$build_dir/vendor/zbar/bin:$PATH
+sh $build_dir/vendor/zbar/configure 
