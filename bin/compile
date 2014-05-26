@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
 
+
+wget -i- http://iweb.dl.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2 -O /tmp/zbar-0.10.tar.bz2
