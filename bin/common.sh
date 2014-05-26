@@ -1,3 +1,7 @@
+#
+#  Originally from https://raw.githubusercontent.com/heroku/heroku-buildpack-nodejs/master/bin/common.sh
+#
+
 error() {
   echo " !     $*" >&2
   exit 1

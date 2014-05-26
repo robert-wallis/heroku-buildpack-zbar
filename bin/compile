@@ -16,4 +16,4 @@ source $bp_dir/bin/common.sh
 
 status "Downloading and installing ZBAR"
 zbar_url="http://iweb.dl.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2"
-curl $zbar_url -s -o - | tar xzf - -C $build_dir
+curl $zbar_url -s -o - | tar jxf - -C $build_dir
