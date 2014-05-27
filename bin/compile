@@ -25,4 +25,4 @@ cd $build_dir/vendor/zbar
 make
 make install
 
-# echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/zbar.js
+echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:$build_dir/vendor/bin:\$PATH\";" > $build_dir/.profile.d/zbar.js
