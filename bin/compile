@@ -9,6 +9,8 @@ build_dir=$1
 cache_dir=$2
 env_dir=$3
 
+bp_dir=$(cd $(dirname $0); cd ..; pwd)
+
 source $bp_dir/bin/common.sh
 
 download () {
