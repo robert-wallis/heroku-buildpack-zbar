@@ -4,5 +4,6 @@
 cat <<EOF
 ---
 config_vars:
-  PATH: bin:/usr/local/bin:/usr/bin:/bin
+  PATH: $HOME/vendor/node/bin:$HOME/bin:$HOME/node_modules/.bin:$build_dir/vendor/bin
+  LD_LIBRARY_PATH: $HOME/vendor/lib
 EOF
