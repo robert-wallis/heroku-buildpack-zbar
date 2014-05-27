@@ -20,7 +20,7 @@ download () {
 }
 
 install () {
-	if [ -d $build_dir/vendor/zbar ]; then
+	if [ -f $build_dir/vendor/bin/zbarimg ]; then
 	  exit 0
 	else
 		download
