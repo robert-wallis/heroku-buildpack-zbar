@@ -4,5 +4,5 @@
 if [ -f $1/vendor/bin/zbarimg ]; then
   echo "ZBAR" && exit 0
 else
-  echo "no" && exit 1
+  echo "no" && exit 0
 fi
