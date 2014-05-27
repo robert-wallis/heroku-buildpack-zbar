@@ -14,7 +14,7 @@ status() {
 protip() {
   echo
   echo "PRO TIP: $*" | indent
-  echo "See https://devcenter.heroku.com/articles/nodejs-support" | indent
+  echo "See zbar install blah blah" | indent
   echo
 }
 
