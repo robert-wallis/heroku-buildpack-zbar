@@ -9,22 +9,24 @@ build_dir=$1
 cache_dir=$2
 env_dir=$3
 
-bp_dir=$(cd $(dirname $0); cd ..; pwd)
+# bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
-# Load some convenience functions like status(), echo(), and indent()
-source $bp_dir/bin/common.sh
+# # Load some convenience functions like status(), echo(), and indent()
+# source $bp_dir/bin/common.sh
 
-status "Downloading and installing ZBAR"
-zbar_url="http://iweb.dl.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2"
-curl $zbar_url -s -o - | tar jxf - -C $build_dir
+# status "Downloading and installing ZBAR"
+# zbar_url="http://iweb.dl.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2"
+# curl $zbar_url -s -o - | tar jxf - -C $build_dir
 
-mkdir -p $build_dir/vendor/bin
-mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
-cd $build_dir/vendor/zbar
-./configure --without-python --without-qt --without-gtk --prefix=$HOME/vendor
-make
-make install
+# mkdir -p $build_dir/vendor/bin
+# mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
+# cd $build_dir/vendor/zbar
+# ./configure --without-python --without-qt --without-gtk --prefix=$HOME/vendor
+# make
+# make install
+# cd $HOME
+touch $HOME/myself
+echo woops > $HOME/myself
 
-echo `ls -la $HOME/vendor`
 
-echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
+# echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/zbar.js
