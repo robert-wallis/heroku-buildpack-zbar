@@ -26,7 +26,7 @@ cd $build_dir/vendor/zbar
 
 
 if [ -f $1/vendor/built_zbar ]; then
-  exit 1
+  echo 'already installed'
 else
   ./configure --disable-video --without-gtk --without-qt --prefix=$build_dir/vendor
 	make
