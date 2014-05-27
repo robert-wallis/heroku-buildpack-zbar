@@ -23,8 +23,13 @@ curl $zbar_url -s -o - | tar jxf - -C $build_dir
 mkdir -p $build_dir/vendor/bin
 mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
 cd $build_dir/vendor/zbar
+
+
+
 ./configure --disable-video --without-gtk --without-qt --prefix=$build_dir/vendor
 make
 make install
+
+touch $build_dir/vendor/built_zbar
 
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:$build_dir/vendor/bin:\$PATH\"; export LD_LIBRARY_PATH=$build_dir/vendor/lib" > $build_dir/.profile.d/zbar.sh
