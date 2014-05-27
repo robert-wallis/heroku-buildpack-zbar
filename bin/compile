@@ -9,28 +9,29 @@ build_dir=$1
 cache_dir=$2
 env_dir=$3
 
-# bp_dir=$(cd $(dirname $0); cd ..; pwd)
+source $bp_dir/bin/common.sh
+
+download () {
+	status "Downloading and installing ZBAR"
+  zbar_url="http://iweb.dl.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2"
+  curl $zbar_url -s -o - | tar jxf - -C $build_dir
+}
+
+install () {
+	if [ -d $build_dir/vendor/zbar ]; then
+	  exit 0
+	else
+		download
+  	mkdir -p $build_dir/vendor/bin
+	  mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
+		cd $build_dir/vendor/zbar
+	  ./configure --disable-video --without-gtk --without-qt --prefix=$build_dir/vendor
+	  make
+	  make install 
+	fi
+}
 
 export LD_LIBRARY_PATH=$build_dir/vendor/lib
 
-# Load some convenience functions like status(), echo(), and indent()
-source $bp_dir/bin/common.sh
+install
 
-status "Downloading and installing ZBAR"
-zbar_url="http://iweb.dl.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2"
-curl $zbar_url -s -o - | tar jxf - -C $build_dir
-
-mkdir -p $build_dir/vendor/bin
-mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
-cd $build_dir/vendor/zbar
-
-
-echo `ls $env_dir`
-
-if [ -f $cache_dir/vendor/bin/zbarimg ]; then
-  exit 0
-else
-  ./configure --disable-video --without-gtk --without-qt --prefix=$build_dir/vendor
-  make
-  make install
-fi
