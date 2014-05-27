@@ -21,3 +21,5 @@ curl $zbar_url -s -o - | tar jxf - -C $build_dir
 mkdir -p $build_dir/vendor
 mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
 sh $build_dir/vendor/zbar/configure 
+sh $build_dir/vendor/zbar/make
+sh $build_dir/vendor/zbar/make install
