@@ -2,7 +2,7 @@
 # bin/detect <build-dir>
 
 if [ -f $1/vendor/bin/zbarimg ]; then
-  echo "ZBAR" && exit 0
+  echo "no" && exit 1
 else
-  echo "no" && exit 0
+  echo "ZBAR" && exit 0
 fi
