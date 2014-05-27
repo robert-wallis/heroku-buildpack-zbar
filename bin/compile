@@ -27,7 +27,7 @@ cd $build_dir/vendor/zbar
 
 echo `ls $build_dir/vendor/bin/zbarimg`
 
-if [ -f $build_dir/vendor/bin/zbarimg ]; then
+if [ -f $cache_dir/vendor/bin/zbarimg ]; then
   exit 0
 else
   ./configure --disable-video --without-gtk --without-qt --prefix=$build_dir/vendor
