@@ -23,6 +23,8 @@ mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
 cd $build_dir/vendor/zbar
 ./configure --without-python --without-qt --without-gtk --prefix=$HOME/vendor
 make
-make install	
+make install
+
+echo `ls -la $HOME/vendor`
 
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
