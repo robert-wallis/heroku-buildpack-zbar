@@ -21,6 +21,6 @@ curl $zbar_url -s -o - | tar jxf - -C $build_dir
 mkdir -p $build_dir/vendor
 mv $build_dir/zbar-0.10 $build_dir/vendor/zbar
 cd $build_dir/vendor/zbar
-./configure --without-python --without-qt --without-gtk
+./configure --without-python --without-qt --without-gtk --prefix=HOME
 make
-make install
+# make install
